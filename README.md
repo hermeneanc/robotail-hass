@@ -13,7 +13,7 @@ switches, numbers, selects, buttons, and time controls for the box and your cats
 
 This integration is based on the [UPet HACS integration](https://github.com/CrazzyBerg/upet-hass)
 and shares its Airrobo backend and the same MQTT data model. The two products
-are very similar under the hood — which is exactly what makes the differences
+are very similar under the hood, which is exactly what makes the differences
 matter.
 
 The stock UBPet integration could **not** be used for Robotail as-is:
@@ -22,9 +22,9 @@ The stock UBPet integration could **not** be used for Robotail as-is:
   different namespace and refuses to authenticate without
   an ISO country code (`areaCode`, e.g. `AT`).
 - With the UBPet defaults the Robotail account signs in, but the backend never
-  returns the litter box — the device is simply invisible.
+  returns the litter box, the device is simply invisible.
 
-So instead of reusing UBPet, we reverse-engineered the Robotail app's API flow:
+So instead of reusing UBPet, I reverse-engineered the Robotail app's API flow:
 
 - the `X-UBT-Sign` request-signing scheme (MD5 of timestamp + app key + nonce +
   device id),
